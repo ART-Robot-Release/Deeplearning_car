@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 0 auto;
+		}
+		.wrap {
+			position: relative;
+			background: #d6e6f7;
+			overflow: hidden;
+		}
+		.pro {
+			width: 500px;
+			height: 20px;
+			border-radius: 30px;
+		}
+		.inner {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: #4d88fd;
+			transform: translateX(-100%);
+			animation:mymove 10s forwards;
+		}
+		@keyframes mymove {
+			from {
+				left: 0;
+			}
+			to {
+				left: 90%;
+			}
+		}
+
+	</style>
+	<script>
+		// window.onload = function() {
+		// 	var innerDom = document.getElementsByClassName("inner")[0];
+		// 	var width = 0;
+		// 	var timer = setInterval(() => {
+		// 		width += 50;
+		// 		console.log(width, '--wd', innerDom);
+		// 		var lastTransform = window.getComputedStyle(innerDom).transform;
+		// 		console.log(lastTransform, '--lastTransform');
+
+		// 		innerDom.animate({
+		// 			transform: [lastTransform, `translateX(${lastTransform}px)`]
+		// 		},{
+		// 			easing: 'linear',
+		// 			fill: 'forwards',
+		// 			duration: 250
+		// 		})
+		// 		// percentComplete = width / 500
+		// 		// innerDom.style.transform = `translateX(${percentComplete * 100 - 100}%)`;
+		// 		width === 500 && clearInterval(timer);
+		// 	}, 1000);
+		}
+	</script>
+
+</head>
+<body>
+	<div class="pro wrap">
+		<div class="pro inner"></div>
+	</div>
+</body>
+</html>

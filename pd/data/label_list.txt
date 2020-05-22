@@ -1,8 +1,6 @@
-0 cancel_10
-1 crossing
-2 limit_10
-3 straight
-4 turn_left
-5 turn_right
-6 paper_red
-7 paper_green
+0 ten
+1 red
+2 green
+3 crossing
+4 right
+5 P

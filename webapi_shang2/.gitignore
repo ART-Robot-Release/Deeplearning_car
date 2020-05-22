@@ -1,0 +1,6 @@
+.idea/
+.local/
+venv/
+website/var/
+**/__pycache__/
+

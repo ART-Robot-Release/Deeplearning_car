@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>竞赛小车</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="bg">
+        <header>
+            <h1>车辆控制平台</h1>
+            <i class="connect-status connect-fail"></i>
+            <span class="connect-text normal-text">已断开</span>
+            <button type="button" id="refresh">
+                <span class="refresh-text">点击重置</span>
+                <i class="refresh-icon"></i>
+            </button>
+        </header>
+
+        <div class="action-card-group action-left">
+            <div class="action-card lane-collection">
+                <div class="card-header">
+                    <span class="card-icon"></span>
+                    <span class="card-title">车道线采集</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-action">
+                        <span>创建任务</span>
+                        <div class="input-wrap">
+                            <input type="text"
+                                id="input-task"
+                                value="0">
+                            <span>m/s</span>
+                            <span class="error hide">请输入速度</span>
+                        </div>
+                        <button type="button" id="create-task-btn" class="action-bth action-bth-active-disable">创建</button>
+                    </div>
+                    <div class="card-action">
+                        <span>图片下载</span>
+                        <div class="input-wrap" id="lane-pic-num">
+                            <div class="hide">
+                                <span>已采集</span>
+                                <span class="pic-num active-text">0</span>
+                                <span>张</span>
+                            </div>
+                        </div>
+                        <button type="button" id="load-lanepic-btn" class="action-bth action-bth-disable">下载</button>
+                        <div class="progress hide" id="lane-load-progress">
+                            <div class="file-origin"></div>
+                            <div class="progress-wrap">
+                                <div class="progress-inner"></div>
+                            </div>
+                            <span class="file-size"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="action-card sign-collection">
+                <div class="card-header">
+                    <span class="card-icon"></span>
+                    <span class="card-title">标志采集</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-action">
+                        <span>开启摄像头</span>
+                        <div class="camera-switch">
+                            <span class="switch-text">未打开</span>
+                            <span class="switch-bg">
+                                <span class="switch-icon switch-close"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <span>图片下载</span>
+                        <div class="input-wrap" id="sign-pic-num">
+                            <div class="hide">
+                                <span>已采集</span>
+                                <span class="pic-num active-text">0</span>
+                                <span>张</span>
+                            </div>
+                        </div>
+                        <button type="button" id="load-sign-btn" class="action-bth action-bth-disable">下载</button>
+                        <div class="progress hide" id="sign-load-progress">
+                            <div class="file-origin"></div>
+                            <div class="progress-wrap">
+                                <div class="progress-inner"></div>
+                            </div>
+                            <span class="file-size"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-center">
+            <div class="img-action hide">
+                <div class="img-icon choose-icon">√</div>
+                <div class="img-icon close-icon">×</div>
+            </div>
+            <div class="img-loading hide">
+                <span>图片加载中...</span>
+            </div>
+            <div class="img-default">
+                <img src="./img/img-bg.png">
+            </div>
+            <div class="img-lane"></div>
+        </div>
+        
+        <div class="action-card-group action-right">
+            <div class="action-card data-collection">
+                <div class="card-header">
+                    <span class="card-icon"></span>
+                    <span class="card-title">数据采集</span>
+                </div>
+                <div class="card-content label-result hide">
+                    <div class="data-collection-group">
+                        <div>
+                            <span class="data-collection-label">
+                                当前识别结果:
+                            </span>
+                            <span class="data-collection-text">
+                            </span>
+                        </div>
+                        <div>
+                            <span class="data-collection-label">
+                                已采集图片数量:
+                            </span>
+                            <span class="data-collection-picnum">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content card-empty">
+                    <p>
+                        暂无数据
+                    </p>
+                </div>
+            </div>
+
+            <div class="action-card operating">
+                <div class="card-header">
+                    <span class="card-icon"></span>
+                    <span class="card-title">运行</span>
+                </div>
+                <div class="card-content">
+                    <p>模型</p>
+                    <div class="upload-model">
+                        <div class="model-param">
+                            <div class="upload-radio lane-upload-radio">
+                                <div class="radio-content">
+                                    <span class="radio-wrap">
+                                        <span class="radio-inner"></span>
+                                    </span>
+                                    <span>车道线模型</span>
+                                </div>
+                                <span class="file-name"></span>
+                                <form action="" id="lane-upload-form">
+                                    <input type="file" id="lane-file" class="hide">
+                                </form>
+                            </div>
+                            <button type="button" id="lane-model-upload" class="action-bth action-bth-active">上传</button>
+                            <div class="progress hide" id="lane-progress">
+                                <div class="file-origin"></div>
+                                <div class="progress-wrap">
+                                    <div class="progress-inner"></div>
+                                </div>
+                                <span class="file-size"></span>
+                            </div>
+                        </div>
+                        <div class="model-param">
+                            <div class="upload-radio sign-upload-radio">
+                                <div class="radio-content">
+                                    <span class="radio-wrap">
+                                        <span class="radio-inner"></span>
+                                    </span>
+                                    <span>标志模型</span>
+                                </div>
+                                <span class="file-name"></span>
+                                <form action="" id="sign-upload-form" method="post" enctype="multipart/form-data">
+                                    <input type="file" id="sign-file" class="hide">
+                                </form>
+                                <button type="button" id="sign-model-upload" class="action-bth action-bth-active">上传</button>
+                                <div class="progress hide" id="sign-progress">
+                                    <div class="file-origin"></div>
+                                    <div class="progress-wrap">
+                                        <div class="progress-inner"></div>
+                                    </div>
+                                    <span class="file-size"></span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="param-upload">
+                        <span>参数上传</span>
+                        <span class="file-name"></span>
+                        <form action="" id="param-upload-form" method="post" enctype="multipart/form-data">
+                            <input type="file" id="param-file" class="hide">
+                        </form>
+                        <button type="button" id="param-upload" class="action-bth action-bth-active">上传</button>
+                        <div class="progress hide" id="param-progress">
+                            <div class="file-origin"></div>
+                            <div class="progress-wrap">
+                                <div class="progress-inner"></div>
+                            </div>
+                            <span class="file-size"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer hide" id="operating-btn">
+                    开始运行
+                </div>
+            </div>
+        </div>
+        <div id="toast" class="hide">
+            <p></p>
+        </div>
+    </div>
+    <script src="./static/jquery.min.js"></script>
+    <script src="./app/index.js"></script>
+</body>
+</html>

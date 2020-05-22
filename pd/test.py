@@ -13,17 +13,17 @@ import time
 import six
 import math
 import random
-import paddle
-import paddle.fluid as fluid
+#import paddle
+#import paddle.fluid as fluid
 import logging
 import xml.etree.ElementTree
 import codecs
 import json
 import cv2
-
-from paddle.fluid.initializer import MSRA
-from paddle.fluid.param_attr import ParamAttr
-from paddle.fluid.regularizer import L2Decay
+import paddlemobile as pm
+#from paddle.fluid.initializer import MSRA
+#from paddle.fluid.param_attr import ParamAttr
+#from paddle.fluid.regularizer import L2Decay
 from PIL import Image, ImageEnhance, ImageDraw
 
 # logger = None
@@ -48,12 +48,12 @@ train_parameters = {
     "use_gpu": False,
     "yolo_cfg": {
         "input_size": [3, 448, 448],    # 原版的边长大小为608，为了提高训练速度和预测速度，此处压缩为448
-        "anchors": [22, 45, 46, 33, 43, 88, 85, 66, 115, 146, 275, 240],
+        "anchors": [7, 10, 12, 22, 24, 17, 22, 45, 46, 33, 43, 88, 85, 66, 115, 146, 275, 240],
         "anchor_mask": [[6, 7, 8], [3, 4, 5], [0, 1, 2]]
     },
     "yolo_tiny_cfg": {
-        "input_size": [3, 424, 424],
-        "anchors": [ 1,3,  2,4,  3,1,  4,1],
+        "input_size": [3, 224, 224],
+        "anchors": [ 0,1,  0,2,  1,3,  2,4,  3,1,  4,1],
         "anchor_mask": [[3, 4, 5], [0, 1, 2]]
     },
     "ignore_thresh": 0.7,
@@ -78,7 +78,7 @@ train_parameters = {
         "brightness_delta": 0.125
     },
     "sgd_strategy": {
-        "learning_rate": 0.1,
+        "learning_rate": 0.001,
         "lr_epochs": [30, 50, 65],
         "lr_decay": [1, 0.5, 0.25, 0.1]
     },
@@ -116,12 +116,12 @@ import codecs
 import sys
 import numpy as np
 import time
-import paddle
-import paddle.fluid as fluid
+#import paddle
+#import paddle.fluid as fluid
 import math
 import functools
 
-from IPython.display import display
+#from IPython.display import display
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
@@ -138,12 +138,19 @@ anchor_mask = yolo_config['anchor_mask']
 label_dict = train_parameters['num_dict']
 class_dim = train_parameters['class_dim']
 print("label_dict:{} class dim:{}".format(label_dict, class_dim))
-place = fluid.CUDAPlace(0) if train_parameters['use_gpu'] else fluid.CPUPlace()
-exe = fluid.Executor(place)
+#place = fluid.CUDAPlace(0) if train_parameters['use_gpu'] else fluid.CPUPlace()
+#exe = fluid.Executor(place)
+#path = train_parameters['freeze_dir']
+#print("luuuu,{}".format(path))
+#[inference_program, feed_target_names, fetch_targets] = fluid.io.load_inference_model(dirname=path, executor=exe)
 path = train_parameters['freeze_dir']
-print("luuuu,{}".format(path))
-[inference_program, feed_target_names, fetch_targets] = fluid.io.load_inference_model(dirname=path, executor=exe)
-
+model_dir = path
+pm_config1 = pm.PaddleMobileConfig()
+pm_config1.precision = pm.PaddleMobileConfig.Precision.FP32######ok
+pm_config1.device = pm.PaddleMobileConfig.Device.kFPGA######ok
+pm_config1.model_dir = model_dir
+predictor1 = pm.CreatePaddlePredictor(pm_config1)
+pm_config1.thread_num = 2    
 
 def draw_bbox_image(img, boxes, labels, save_name):
     """
@@ -163,7 +170,7 @@ def draw_bbox_image(img, boxes, labels, save_name):
         draw.rectangle((xmin, ymin, xmax, ymax), None, 'red')
         draw.text((xmin, ymin), label_dict[int(label)], (255, 255, 0))
     img.save(save_name)
-    display(img)
+    #display(img)
 
 
 def resize_img(img, target_size):
@@ -206,17 +213,30 @@ def infer(image_path):
     image_shape = np.array([input_h, input_w], dtype='int32')
     # print("image shape high:{0}, width:{1}".format(input_h, input_w))
     t1 = time.time()
-    batch_outputs = exe.run(inference_program,
+    '''batch_outputs = exe.run(inference_program,
                             feed={feed_target_names[0]: tensor_img,
                                   feed_target_names[1]: image_shape[np.newaxis, :]},
                             fetch_list=fetch_targets,
-                            return_numpy=False)
+                            return_numpy=False)'''
+    tensor = pm.PaddleTensor()
+    tensor.dtype =pm.PaddleDType.FLOAT32
+    tensor.shape  = (1,3,input_w,input_h)
+    tensor.data = pm.PaddleBuf(tensor_img)
+    paddle_data_feeds = [tensor]
+        
+    tensor_out = pm.PaddleTensor()
+    tensor_out.dtype =pm.PaddleDType.FLOAT32
+    tensor_out.shape  = ()##????????????????????????????????
+    tensor_out.data = pm.PaddleBuf()
+    batch_outputs = [tensor_out]  
+    batch_outputs = predictor1.Run(paddle_data_feeds)
+    
     period = time.time() - t1
     print("predict cost time:{0}".format("%2.2f sec" % period))
     bboxes = np.array(batch_outputs[0])
     #print(bboxes)
 
-    if bboxes.shape[1] != 6:
+    if len(bboxes.shape) == 1 :
         print("No object found in {}".format(image_path))
         return
     labels = bboxes[:, 0].astype('int32')
@@ -226,16 +246,14 @@ def infer(image_path):
     n_boxes=[]
 
     for i in range(len(labels)):
-        if(scores[i]>0.1):
+        if(scores[i]>0.3):
             n_labels.append(labels[i])
             n_boxes.append(boxes[i])
-
     print("box:{}".format(n_boxes)) 
-    #print("***********score",scores[i])
     print("label:{}".format(n_labels))
     last_dot_index = image_path.rfind('.')
     out_path = image_path[:last_dot_index]
-    out_path = './result.jpg'
+    out_path = './1_result.jpg'
     #draw_bbox_image(origin, boxes, labels, out_path)
     draw_bbox_image(origin, n_boxes, n_labels, out_path)
     send_data='null'
@@ -244,10 +262,12 @@ def infer(image_path):
     print("send_data:{}".format(send_data))
 
 if __name__ == '__main__':
-	cam = cv2.VideoCapture(1)
-	while 1:
-		ret,frame = cam.read()
-		res=cv2.resize(frame,(424,424),interpolation=cv2.INTER_CUBIC)
-		cv2.imwrite("1.jpg",res)
-		image_path = "1.jpg"
-		infer(image_path)
+    cam = cv2.VideoCapture(2)
+    while 1:
+        time.sleep(2)
+        print("solve main priblem")
+        ret,frame = cam.read()
+        res=cv2.resize(frame,(224,224),interpolation=cv2.INTER_CUBIC)
+        cv2.imwrite("1.jpg",res)
+        image_path = "1.jpg"
+        infer(image_path)

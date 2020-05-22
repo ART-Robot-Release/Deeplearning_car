@@ -1,0 +1,51 @@
+
+<html>
+<head>
+    <meta name="referrer" content="never">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+	<script src="http://static.bcedocument.com/reader/v2/doc_reader_v2.js"></script>
+    <script type="text/javascript">
+     
+     var data = {};
+    data.docId = "doc-jjnq7gixu7213ud";
+    data.host= "BCEDOC";
+    //data.info= "使用百度云文档阅读器SDK查看,详情参考文档: https://cloud.baidu.com/doc/DOC/WebDocReaderSDK.html"
+    data.token= "TOKEN";
+    data.type= "doc";
+    // preview(data);
+    var option = {
+      		        docId: data.docId,
+      		        token: data.token,
+      		        host: data.host,
+      		        serverHost: 'http://doc.bj.baidubce.com',
+      		        width: 760, //文档容器宽度
+      		        zoom: true,              //是否显示放大缩小按钮
+      		        zoomStepWidth:200,
+      		        pn: 3,  //定位到第几页，可选
+      		        ready: function (handler) {  // 设置字体大小和颜色, 背景颜色（可设置白天黑夜模式）
+      		            handler.setFontSize(1);
+      		            handler.setBackgroundColor('#000');
+      		            handler.setFontColor('#fff');
+      		        },
+      		        flip: function (data) {    // 翻页时回调函数, 可供客户进行统计等
+      		            console.log(data.pn);
+      		        },
+      		        fontSize:'big',
+      		        toolbarConf: {
+      		                page: true, //上下翻页箭头图标
+      		                pagenum: true, //几分之几页
+      		                full: true, //是否显示全屏图标,点击后全屏
+      		                copy: true, //是否可以复制文档内容
+      		                position: 'center',// 设置 toolbar中翻页和放大图标的位置(值有left/center)
+      		        } //文档顶部工具条配置对象,必选
+      		    };
+      		    new Document('knowledgevideo', option);
+      
+    </script>
+</head>
+
+<body>
+ <div class="play_cj" id="knowledgevideo"></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+Global:
+    tool : build_submitter
+
+Default:
+    profile : [product]
+
+Profiles:
+    - profile:
+      name : product
+      env : cmc_standard
+      command : export branch=${AGILE_COMPILE_BRANCH} && sh ./build.sh
+      release : true
