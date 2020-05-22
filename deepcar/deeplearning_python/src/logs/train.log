@@ -1,0 +1,381 @@
+2019-11-24 15:02:42,549 - <ipython-input-11-546e016c2cbb>[line:4] - INFO: start train YOLOv3, train params:{'data_dir': 'data/data6045', 'train_list': 'train.txt', 'eval_list': 'eval.txt', 'class_dim': 1, 'label_dict': {'crossing': 0}, 'num_dict': {0: 'crossing'}, 'image_count': 634, 'continue_train': True, 'pretrained': False, 'pretrained_model_dir': './pretrained-model', 'save_model_dir': './yolo-model', 'model_prefix': 'yolo-v3', 'freeze_dir': 'freeze_model', 'use_tiny': True, 'max_box_num': 20, 'num_epochs': 80, 'train_batch_size': 32, 'use_gpu': True, 'yolo_cfg': {'input_size': [3, 448, 448], 'anchors': [7, 10, 12, 22, 24, 17, 22, 45, 46, 33, 43, 88, 85, 66, 115, 146, 275, 240], 'anchor_mask': [[6, 7, 8], [3, 4, 5], [0, 1, 2]]}, 'yolo_tiny_cfg': {'input_size': [3, 256, 256], 'anchors': [6, 8, 13, 15, 22, 34, 48, 50, 81, 100, 205, 191], 'anchor_mask': [[3, 4, 5], [0, 1, 2]]}, 'ignore_thresh': 0.7, 'mean_rgb': [127.5, 127.5, 127.5], 'mode': 'train', 'multi_data_reader_count': 4, 'apply_distort': True, 'nms_top_k': 300, 'nms_pos_k': 300, 'valid_thresh': 0.01, 'nms_thresh': 0.45, 'image_distort_strategy': {'expand_prob': 0.5, 'expand_max_ratio': 4, 'hue_prob': 0.5, 'hue_delta': 18, 'contrast_prob': 0.5, 'contrast_delta': 0.5, 'saturation_prob': 0.5, 'saturation_delta': 0.5, 'brightness_prob': 0.5, 'brightness_delta': 0.125}, 'sgd_strategy': {'learning_rate': 0.002, 'lr_epochs': [30, 50, 65], 'lr_decay': [1, 0.5, 0.25, 0.1]}, 'early_stop': {'sample_frequency': 50, 'successive_limit': 3, 'min_loss': 2.5, 'min_curr_map': 0.84}}
+2019-11-24 15:02:42,550 - <ipython-input-11-546e016c2cbb>[line:6] - INFO: create place, use gpu:True
+2019-11-24 15:02:42,551 - <ipython-input-11-546e016c2cbb>[line:9] - INFO: build network and program
+2019-11-24 15:02:42,645 - <ipython-input-9-5a249e6d42b1>[line:19] - INFO: origin learning rate: 0.002 boundaries: [570, 950, 1235]  values: [0.002, 0.001, 0.0005, 0.0002]
+2019-11-24 15:02:42,735 - <ipython-input-11-546e016c2cbb>[line:14] - INFO: build executor and init params
+2019-11-24 15:02:43,623 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 0, start read image
+2019-11-24 15:02:51,501 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 0, trainbatch 10, loss 214.329345703125 time 0.07 sec
+2019-11-24 15:02:57,784 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 0, trainbatch 20, loss 91.0922622680664 time 0.05 sec
+2019-11-24 15:02:57,785 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 0 train result, current pass mean loss: 260.648934173584
+2019-11-24 15:02:57,787 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 0 epcho train result, current best pass loss 260.648934173584
+2019-11-24 15:02:57,862 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 1, start read image
+2019-11-24 15:03:04,917 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 1, trainbatch 10, loss 51.55229568481445 time 0.06 sec
+2019-11-24 15:03:11,562 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 1, trainbatch 20, loss 32.902896881103516 time 0.05 sec
+2019-11-24 15:03:11,562 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 1 train result, current pass mean loss: 53.659481620788576
+2019-11-24 15:03:11,562 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 1 epcho train result, current best pass loss 53.659481620788576
+2019-11-24 15:03:11,720 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 2, start read image
+2019-11-24 15:03:18,357 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 2, trainbatch 10, loss 24.128097534179688 time 0.06 sec
+2019-11-24 15:03:24,855 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 2, trainbatch 20, loss 18.87238311767578 time 0.05 sec
+2019-11-24 15:03:24,855 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 2 train result, current pass mean loss: 24.366285610198975
+2019-11-24 15:03:24,855 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 2 epcho train result, current best pass loss 24.366285610198975
+2019-11-24 15:03:25,019 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 3, start read image
+2019-11-24 15:03:31,944 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 3, trainbatch 10, loss 15.277298927307129 time 0.06 sec
+2019-11-24 15:03:38,241 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 3, trainbatch 20, loss 13.269445419311523 time 0.06 sec
+2019-11-24 15:03:38,241 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 3 train result, current pass mean loss: 15.663010597229004
+2019-11-24 15:03:38,241 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 3 epcho train result, current best pass loss 15.663010597229004
+2019-11-24 15:03:38,372 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 4, start read image
+2019-11-24 15:03:44,877 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 4, trainbatch 10, loss 12.351655960083008 time 0.06 sec
+2019-11-24 15:03:51,532 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 4, trainbatch 20, loss 11.30014419555664 time 0.05 sec
+2019-11-24 15:03:51,533 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 4 train result, current pass mean loss: 12.254869985580445
+2019-11-24 15:03:51,533 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 4 epcho train result, current best pass loss 12.254869985580445
+2019-11-24 15:03:51,704 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 5, start read image
+2019-11-24 15:03:58,942 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 5, trainbatch 10, loss 11.170296669006348 time 0.06 sec
+2019-11-24 15:04:06,720 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 5, trainbatch 20, loss 9.992746353149414 time 0.06 sec
+2019-11-24 15:04:06,720 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 5 train result, current pass mean loss: 10.663907623291015
+2019-11-24 15:04:06,721 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 5 epcho train result, current best pass loss 10.663907623291015
+2019-11-24 15:04:06,852 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 6, start read image
+2019-11-24 15:04:13,969 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 6, trainbatch 10, loss 9.505804061889648 time 0.06 sec
+2019-11-24 15:04:21,028 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 6, trainbatch 20, loss 9.2512788772583 time 0.05 sec
+2019-11-24 15:04:21,029 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 6 train result, current pass mean loss: 9.680841541290283
+2019-11-24 15:04:21,029 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 6 epcho train result, current best pass loss 9.680841541290283
+2019-11-24 15:04:21,197 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 7, start read image
+2019-11-24 15:04:28,157 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 7, trainbatch 10, loss 9.00029468536377 time 0.07 sec
+2019-11-24 15:04:34,615 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 7, trainbatch 20, loss 8.540216445922852 time 0.05 sec
+2019-11-24 15:04:34,616 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 7 train result, current pass mean loss: 8.987121534347533
+2019-11-24 15:04:34,616 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 7 epcho train result, current best pass loss 8.987121534347533
+2019-11-24 15:04:34,780 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 8, start read image
+2019-11-24 15:04:42,091 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 8, trainbatch 10, loss 8.436073303222656 time 0.06 sec
+2019-11-24 15:04:49,022 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 8, trainbatch 20, loss 8.361564636230469 time 0.05 sec
+2019-11-24 15:04:49,022 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 8 train result, current pass mean loss: 8.59666166305542
+2019-11-24 15:04:49,022 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 8 epcho train result, current best pass loss 8.59666166305542
+2019-11-24 15:04:49,182 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 9, start read image
+2019-11-24 15:04:55,760 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 9, trainbatch 10, loss 8.408712387084961 time 0.06 sec
+2019-11-24 15:05:02,789 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 9, trainbatch 20, loss 8.150447845458984 time 0.05 sec
+2019-11-24 15:05:02,790 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 9 train result, current pass mean loss: 8.243313860893249
+2019-11-24 15:05:02,790 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 9 epcho train result, current best pass loss 8.243313860893249
+2019-11-24 15:05:02,958 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 10, start read image
+2019-11-24 15:05:09,577 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 10, trainbatch 10, loss 7.714663505554199 time 0.06 sec
+2019-11-24 15:05:16,222 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 10, trainbatch 20, loss 8.295825004577637 time 0.06 sec
+2019-11-24 15:05:16,222 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 10 train result, current pass mean loss: 8.011353850364685
+2019-11-24 15:05:16,222 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 10 epcho train result, current best pass loss 8.011353850364685
+2019-11-24 15:05:16,364 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 11, start read image
+2019-11-24 15:05:23,364 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 11, trainbatch 10, loss 7.847765922546387 time 0.06 sec
+2019-11-24 15:05:30,023 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 11, trainbatch 20, loss 7.054928302764893 time 0.05 sec
+2019-11-24 15:05:30,023 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 11 train result, current pass mean loss: 7.712010669708252
+2019-11-24 15:05:30,024 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 11 epcho train result, current best pass loss 7.712010669708252
+2019-11-24 15:05:30,198 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 12, start read image
+2019-11-24 15:05:36,828 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 12, trainbatch 10, loss 7.238593101501465 time 0.06 sec
+2019-11-24 15:05:43,550 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 12, trainbatch 20, loss 7.86186408996582 time 0.05 sec
+2019-11-24 15:05:43,550 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 12 train result, current pass mean loss: 7.584318852424621
+2019-11-24 15:05:43,550 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 12 epcho train result, current best pass loss 7.584318852424621
+2019-11-24 15:05:43,712 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 13, start read image
+2019-11-24 15:05:50,707 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 13, trainbatch 10, loss 7.109505653381348 time 0.06 sec
+2019-11-24 15:05:57,232 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 13, trainbatch 20, loss 7.150356292724609 time 0.05 sec
+2019-11-24 15:05:57,232 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 13 train result, current pass mean loss: 7.375619649887085
+2019-11-24 15:05:57,232 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 13 epcho train result, current best pass loss 7.375619649887085
+2019-11-24 15:05:57,394 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 14, start read image
+2019-11-24 15:06:04,238 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 14, trainbatch 10, loss 7.305872917175293 time 0.07 sec
+2019-11-24 15:06:11,154 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 14, trainbatch 20, loss 7.957036972045898 time 0.05 sec
+2019-11-24 15:06:11,154 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 14 train result, current pass mean loss: 7.25055422782898
+2019-11-24 15:06:11,154 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 14 epcho train result, current best pass loss 7.25055422782898
+2019-11-24 15:06:11,321 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 15, start read image
+2019-11-24 15:06:17,741 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 15, trainbatch 10, loss 7.197168827056885 time 0.06 sec
+2019-11-24 15:06:24,422 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 15, trainbatch 20, loss 6.636588096618652 time 0.06 sec
+2019-11-24 15:06:24,422 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 15 train result, current pass mean loss: 7.127655053138733
+2019-11-24 15:06:24,422 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 15 epcho train result, current best pass loss 7.127655053138733
+2019-11-24 15:06:24,579 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 16, start read image
+2019-11-24 15:06:31,397 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 16, trainbatch 10, loss 6.885505199432373 time 0.06 sec
+2019-11-24 15:06:38,143 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 16, trainbatch 20, loss 6.520664215087891 time 0.05 sec
+2019-11-24 15:06:38,144 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 16 train result, current pass mean loss: 7.003669428825378
+2019-11-24 15:06:38,144 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 16 epcho train result, current best pass loss 7.003669428825378
+2019-11-24 15:06:38,300 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 17, start read image
+2019-11-24 15:06:44,701 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 17, trainbatch 10, loss 6.614736080169678 time 0.06 sec
+2019-11-24 15:06:51,512 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 17, trainbatch 20, loss 6.711642265319824 time 0.06 sec
+2019-11-24 15:06:51,513 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 17 train result, current pass mean loss: 6.8156955480575565
+2019-11-24 15:06:51,513 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 17 epcho train result, current best pass loss 6.8156955480575565
+2019-11-24 15:06:51,669 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 18, start read image
+2019-11-24 15:06:58,525 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 18, trainbatch 10, loss 6.8384928703308105 time 0.06 sec
+2019-11-24 15:07:05,213 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 18, trainbatch 20, loss 7.260385990142822 time 0.05 sec
+2019-11-24 15:07:05,214 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 18 train result, current pass mean loss: 6.769153952598572
+2019-11-24 15:07:05,214 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 18 epcho train result, current best pass loss 6.769153952598572
+2019-11-24 15:07:05,366 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 19, start read image
+2019-11-24 15:07:12,050 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 19, trainbatch 10, loss 6.3438944816589355 time 0.06 sec
+2019-11-24 15:07:18,672 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 19, trainbatch 20, loss 6.373490333557129 time 0.05 sec
+2019-11-24 15:07:18,672 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 19 train result, current pass mean loss: 6.6769365787506105
+2019-11-24 15:07:18,672 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 19 epcho train result, current best pass loss 6.6769365787506105
+2019-11-24 15:07:18,838 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 20, start read image
+2019-11-24 15:07:25,382 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 20, trainbatch 10, loss 6.305598735809326 time 0.06 sec
+2019-11-24 15:07:32,120 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 20, trainbatch 20, loss 6.358888149261475 time 0.05 sec
+2019-11-24 15:07:32,120 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 20 train result, current pass mean loss: 6.568416166305542
+2019-11-24 15:07:32,120 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 20 epcho train result, current best pass loss 6.568416166305542
+2019-11-24 15:07:32,283 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 21, start read image
+2019-11-24 15:07:39,367 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 21, trainbatch 10, loss 6.100939750671387 time 0.07 sec
+2019-11-24 15:07:45,895 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 21, trainbatch 20, loss 6.365594863891602 time 0.05 sec
+2019-11-24 15:07:45,895 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 21 train result, current pass mean loss: 6.455096673965454
+2019-11-24 15:07:45,895 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 21 epcho train result, current best pass loss 6.455096673965454
+2019-11-24 15:07:46,048 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 22, start read image
+2019-11-24 15:07:52,781 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 22, trainbatch 10, loss 6.608917236328125 time 0.06 sec
+2019-11-24 15:07:59,749 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 22, trainbatch 20, loss 6.205249786376953 time 0.05 sec
+2019-11-24 15:07:59,750 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 22 train result, current pass mean loss: 6.403679323196411
+2019-11-24 15:07:59,750 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 22 epcho train result, current best pass loss 6.403679323196411
+2019-11-24 15:07:59,918 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 23, start read image
+2019-11-24 15:08:06,758 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 23, trainbatch 10, loss 6.0680670738220215 time 0.06 sec
+2019-11-24 15:08:13,433 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 23, trainbatch 20, loss 6.0794196128845215 time 0.06 sec
+2019-11-24 15:08:13,433 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 23 train result, current pass mean loss: 6.201610732078552
+2019-11-24 15:08:13,434 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 23 epcho train result, current best pass loss 6.201610732078552
+2019-11-24 15:08:13,594 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 24, start read image
+2019-11-24 15:08:20,400 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 24, trainbatch 10, loss 6.174099445343018 time 0.06 sec
+2019-11-24 15:08:27,404 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 24, trainbatch 20, loss 6.070700645446777 time 0.05 sec
+2019-11-24 15:08:27,404 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 24 train result, current pass mean loss: 6.222593855857849
+2019-11-24 15:08:27,404 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 25, start read image
+2019-11-24 15:08:34,129 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 25, trainbatch 10, loss 6.3475260734558105 time 0.06 sec
+2019-11-24 15:08:41,042 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 25, trainbatch 20, loss 6.150304794311523 time 0.05 sec
+2019-11-24 15:08:41,042 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 25 train result, current pass mean loss: 6.149981904029846
+2019-11-24 15:08:41,042 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 25 epcho train result, current best pass loss 6.149981904029846
+2019-11-24 15:08:41,198 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 26, start read image
+2019-11-24 15:08:47,929 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 26, trainbatch 10, loss 6.088443279266357 time 0.06 sec
+2019-11-24 15:08:54,462 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 26, trainbatch 20, loss 5.545257091522217 time 0.05 sec
+2019-11-24 15:08:54,462 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 26 train result, current pass mean loss: 6.006807971000671
+2019-11-24 15:08:54,462 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 26 epcho train result, current best pass loss 6.006807971000671
+2019-11-24 15:08:54,626 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 27, start read image
+2019-11-24 15:09:01,380 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 27, trainbatch 10, loss 6.248779296875 time 0.07 sec
+2019-11-24 15:09:08,470 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 27, trainbatch 20, loss 6.155534267425537 time 0.05 sec
+2019-11-24 15:09:08,471 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 27 train result, current pass mean loss: 6.003679585456848
+2019-11-24 15:09:08,471 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 27 epcho train result, current best pass loss 6.003679585456848
+2019-11-24 15:09:08,624 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 28, start read image
+2019-11-24 15:09:15,259 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 28, trainbatch 10, loss 6.468703269958496 time 0.06 sec
+2019-11-24 15:09:21,780 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 28, trainbatch 20, loss 5.337669372558594 time 0.05 sec
+2019-11-24 15:09:21,780 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 28 train result, current pass mean loss: 5.98853747844696
+2019-11-24 15:09:21,780 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 28 epcho train result, current best pass loss 5.98853747844696
+2019-11-24 15:09:21,938 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 29, start read image
+2019-11-24 15:09:28,831 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 29, trainbatch 10, loss 6.188840866088867 time 0.06 sec
+2019-11-24 15:09:35,910 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 29, trainbatch 20, loss 5.687333106994629 time 0.05 sec
+2019-11-24 15:09:35,911 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 29 train result, current pass mean loss: 5.916994786262512
+2019-11-24 15:09:35,911 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 29 epcho train result, current best pass loss 5.916994786262512
+2019-11-24 15:09:36,069 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 30, start read image
+2019-11-24 15:09:43,258 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 30, trainbatch 10, loss 5.572329998016357 time 0.06 sec
+2019-11-24 15:09:49,790 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 30, trainbatch 20, loss 5.486425399780273 time 0.06 sec
+2019-11-24 15:09:49,791 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 30 train result, current pass mean loss: 5.846258306503296
+2019-11-24 15:09:49,791 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 30 epcho train result, current best pass loss 5.846258306503296
+2019-11-24 15:09:49,949 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 31, start read image
+2019-11-24 15:09:56,942 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 31, trainbatch 10, loss 5.680503845214844 time 0.06 sec
+2019-11-24 15:10:03,929 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 31, trainbatch 20, loss 6.338275909423828 time 0.05 sec
+2019-11-24 15:10:03,930 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 31 train result, current pass mean loss: 5.842729020118713
+2019-11-24 15:10:03,930 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 31 epcho train result, current best pass loss 5.842729020118713
+2019-11-24 15:10:04,071 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 32, start read image
+2019-11-24 15:10:10,733 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 32, trainbatch 10, loss 5.506499767303467 time 0.06 sec
+2019-11-24 15:10:17,435 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 32, trainbatch 20, loss 5.382802963256836 time 0.05 sec
+2019-11-24 15:10:17,436 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 32 train result, current pass mean loss: 5.805383229255677
+2019-11-24 15:10:17,436 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 32 epcho train result, current best pass loss 5.805383229255677
+2019-11-24 15:10:17,609 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 33, start read image
+2019-11-24 15:10:25,005 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 33, trainbatch 10, loss 6.151669502258301 time 0.06 sec
+2019-11-24 15:10:31,741 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 33, trainbatch 20, loss 5.96718168258667 time 0.05 sec
+2019-11-24 15:10:31,742 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 33 train result, current pass mean loss: 5.803278923034668
+2019-11-24 15:10:31,742 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 33 epcho train result, current best pass loss 5.803278923034668
+2019-11-24 15:10:31,905 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 34, start read image
+2019-11-24 15:10:38,627 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 34, trainbatch 10, loss 5.374444484710693 time 0.07 sec
+2019-11-24 15:10:45,627 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 34, trainbatch 20, loss 5.589865684509277 time 0.05 sec
+2019-11-24 15:10:45,628 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 34 train result, current pass mean loss: 5.682583975791931
+2019-11-24 15:10:45,628 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 34 epcho train result, current best pass loss 5.682583975791931
+2019-11-24 15:10:45,794 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 35, start read image
+2019-11-24 15:10:52,384 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 35, trainbatch 10, loss 5.678685188293457 time 0.06 sec
+2019-11-24 15:10:58,941 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 35, trainbatch 20, loss 5.566634178161621 time 0.05 sec
+2019-11-24 15:10:58,941 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 35 train result, current pass mean loss: 5.708005142211914
+2019-11-24 15:10:58,941 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 36, start read image
+2019-11-24 15:11:06,004 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 36, trainbatch 10, loss 5.680446624755859 time 0.06 sec
+2019-11-24 15:11:12,701 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 36, trainbatch 20, loss 5.599460124969482 time 0.16 sec
+2019-11-24 15:11:12,701 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 36 train result, current pass mean loss: 5.652969551086426
+2019-11-24 15:11:12,701 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 36 epcho train result, current best pass loss 5.652969551086426
+2019-11-24 15:11:12,857 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 37, start read image
+2019-11-24 15:11:20,052 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 37, trainbatch 10, loss 5.33950662612915 time 0.06 sec
+2019-11-24 15:11:27,205 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 37, trainbatch 20, loss 5.207599639892578 time 0.05 sec
+2019-11-24 15:11:27,205 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 37 train result, current pass mean loss: 5.61540367603302
+2019-11-24 15:11:27,206 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 37 epcho train result, current best pass loss 5.61540367603302
+2019-11-24 15:11:27,372 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 38, start read image
+2019-11-24 15:11:33,946 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 38, trainbatch 10, loss 6.192784786224365 time 0.06 sec
+2019-11-24 15:11:40,895 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 38, trainbatch 20, loss 5.445341110229492 time 0.05 sec
+2019-11-24 15:11:40,895 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 38 train result, current pass mean loss: 5.630642890930176
+2019-11-24 15:11:40,895 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 39, start read image
+2019-11-24 15:11:47,718 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 39, trainbatch 10, loss 5.373734474182129 time 0.06 sec
+2019-11-24 15:11:54,731 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 39, trainbatch 20, loss 5.609528541564941 time 0.05 sec
+2019-11-24 15:11:54,731 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 39 train result, current pass mean loss: 5.564962267875671
+2019-11-24 15:11:54,731 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 39 epcho train result, current best pass loss 5.564962267875671
+2019-11-24 15:11:54,903 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 40, start read image
+2019-11-24 15:12:02,056 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 40, trainbatch 10, loss 5.720632076263428 time 0.07 sec
+2019-11-24 15:12:08,892 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 40, trainbatch 20, loss 5.544569492340088 time 0.05 sec
+2019-11-24 15:12:08,893 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 40 train result, current pass mean loss: 5.580331444740295
+2019-11-24 15:12:08,893 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 41, start read image
+2019-11-24 15:12:15,749 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 41, trainbatch 10, loss 5.288298606872559 time 0.06 sec
+2019-11-24 15:12:22,508 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 41, trainbatch 20, loss 5.199726104736328 time 0.05 sec
+2019-11-24 15:12:22,509 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 41 train result, current pass mean loss: 5.511756324768067
+2019-11-24 15:12:22,509 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 41 epcho train result, current best pass loss 5.511756324768067
+2019-11-24 15:12:22,666 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 42, start read image
+2019-11-24 15:12:29,467 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 42, trainbatch 10, loss 5.360790252685547 time 0.06 sec
+2019-11-24 15:12:36,516 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 42, trainbatch 20, loss 6.304099082946777 time 0.05 sec
+2019-11-24 15:12:36,516 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 42 train result, current pass mean loss: 5.4565822124481205
+2019-11-24 15:12:36,517 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 42 epcho train result, current best pass loss 5.4565822124481205
+2019-11-24 15:12:36,679 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 43, start read image
+2019-11-24 15:12:42,952 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 43, trainbatch 10, loss 5.607180595397949 time 0.06 sec
+2019-11-24 15:12:49,366 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 43, trainbatch 20, loss 5.124262809753418 time 0.06 sec
+2019-11-24 15:12:49,366 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 43 train result, current pass mean loss: 5.426762413978577
+2019-11-24 15:12:49,366 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 43 epcho train result, current best pass loss 5.426762413978577
+2019-11-24 15:12:49,520 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 44, start read image
+2019-11-24 15:12:56,279 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 44, trainbatch 10, loss 5.461263656616211 time 0.06 sec
+2019-11-24 15:13:02,969 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 44, trainbatch 20, loss 5.102165699005127 time 0.05 sec
+2019-11-24 15:13:02,969 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 44 train result, current pass mean loss: 5.409622693061829
+2019-11-24 15:13:02,969 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 44 epcho train result, current best pass loss 5.409622693061829
+2019-11-24 15:13:03,132 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 45, start read image
+2019-11-24 15:13:10,401 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 45, trainbatch 10, loss 5.547760486602783 time 0.06 sec
+2019-11-24 15:13:17,113 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 45, trainbatch 20, loss 5.332220077514648 time 0.05 sec
+2019-11-24 15:13:17,114 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 45 train result, current pass mean loss: 5.3796510934829715
+2019-11-24 15:13:17,114 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 45 epcho train result, current best pass loss 5.3796510934829715
+2019-11-24 15:13:17,272 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 46, start read image
+2019-11-24 15:13:24,372 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 46, trainbatch 10, loss 5.008069038391113 time 0.06 sec
+2019-11-24 15:13:31,112 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 46, trainbatch 20, loss 5.535741806030273 time 0.05 sec
+2019-11-24 15:13:31,112 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 46 train result, current pass mean loss: 5.433389663696289
+2019-11-24 15:13:31,112 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 47, start read image
+2019-11-24 15:13:37,867 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 47, trainbatch 10, loss 4.954835414886475 time 0.06 sec
+2019-11-24 15:13:44,532 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 47, trainbatch 20, loss 5.509271621704102 time 0.05 sec
+2019-11-24 15:13:44,532 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 47 train result, current pass mean loss: 5.345308566093445
+2019-11-24 15:13:44,532 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 47 epcho train result, current best pass loss 5.345308566093445
+2019-11-24 15:13:44,669 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 48, start read image
+2019-11-24 15:13:51,515 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 48, trainbatch 10, loss 4.978397369384766 time 0.06 sec
+2019-11-24 15:13:58,572 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 48, trainbatch 20, loss 4.961906909942627 time 0.05 sec
+2019-11-24 15:13:58,572 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 48 train result, current pass mean loss: 5.290405631065369
+2019-11-24 15:13:58,573 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 48 epcho train result, current best pass loss 5.290405631065369
+2019-11-24 15:13:58,718 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 49, start read image
+2019-11-24 15:14:05,607 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 49, trainbatch 10, loss 4.951409339904785 time 0.06 sec
+2019-11-24 15:14:11,983 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 49, trainbatch 20, loss 4.952339172363281 time 0.06 sec
+2019-11-24 15:14:11,984 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 49 train result, current pass mean loss: 5.2450669527053835
+2019-11-24 15:14:11,984 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 49 epcho train result, current best pass loss 5.2450669527053835
+2019-11-24 15:14:12,120 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 50, start read image
+2019-11-24 15:14:19,275 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 50, trainbatch 10, loss 5.841291427612305 time 0.06 sec
+2019-11-24 15:14:26,536 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 50, trainbatch 20, loss 5.450871467590332 time 0.05 sec
+2019-11-24 15:14:26,537 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 50 train result, current pass mean loss: 5.377178359031677
+2019-11-24 15:14:26,537 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 51, start read image
+2019-11-24 15:14:33,815 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 51, trainbatch 10, loss 5.644032001495361 time 0.06 sec
+2019-11-24 15:14:40,447 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 51, trainbatch 20, loss 5.6094255447387695 time 0.05 sec
+2019-11-24 15:14:40,447 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 51 train result, current pass mean loss: 5.3360011100769045
+2019-11-24 15:14:40,447 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 52, start read image
+2019-11-24 15:14:47,276 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 52, trainbatch 10, loss 5.05241584777832 time 0.07 sec
+2019-11-24 15:14:54,192 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 52, trainbatch 20, loss 5.5764265060424805 time 0.05 sec
+2019-11-24 15:14:54,192 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 52 train result, current pass mean loss: 5.3682070016860965
+2019-11-24 15:14:54,192 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 53, start read image
+2019-11-24 15:15:01,285 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 53, trainbatch 10, loss 5.5087785720825195 time 0.06 sec
+2019-11-24 15:15:08,027 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 53, trainbatch 20, loss 4.8786845207214355 time 0.05 sec
+2019-11-24 15:15:08,027 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 53 train result, current pass mean loss: 5.286078453063965
+2019-11-24 15:15:08,027 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 54, start read image
+2019-11-24 15:15:14,782 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 54, trainbatch 10, loss 4.969082355499268 time 0.06 sec
+2019-11-24 15:15:21,433 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 54, trainbatch 20, loss 5.207470417022705 time 0.06 sec
+2019-11-24 15:15:21,433 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 54 train result, current pass mean loss: 5.20949354171753
+2019-11-24 15:15:21,433 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 54 epcho train result, current best pass loss 5.20949354171753
+2019-11-24 15:15:21,591 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 55, start read image
+2019-11-24 15:15:29,252 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 55, trainbatch 10, loss 5.696925163269043 time 0.06 sec
+2019-11-24 15:15:35,832 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 55, trainbatch 20, loss 4.948700904846191 time 0.05 sec
+2019-11-24 15:15:35,832 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 55 train result, current pass mean loss: 5.2646629333496096
+2019-11-24 15:15:35,832 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 56, start read image
+2019-11-24 15:15:43,180 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 56, trainbatch 10, loss 5.536116600036621 time 0.06 sec
+2019-11-24 15:15:49,705 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 56, trainbatch 20, loss 5.116997241973877 time 0.05 sec
+2019-11-24 15:15:49,705 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 56 train result, current pass mean loss: 5.217629337310791
+2019-11-24 15:15:49,706 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 57, start read image
+2019-11-24 15:15:56,788 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 57, trainbatch 10, loss 4.975649833679199 time 0.07 sec
+2019-11-24 15:16:03,219 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 57, trainbatch 20, loss 4.97357702255249 time 0.05 sec
+2019-11-24 15:16:03,219 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 57 train result, current pass mean loss: 5.12224817276001
+2019-11-24 15:16:03,219 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 57 epcho train result, current best pass loss 5.12224817276001
+2019-11-24 15:16:03,361 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 58, start read image
+2019-11-24 15:16:10,191 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 58, trainbatch 10, loss 5.061738967895508 time 0.06 sec
+2019-11-24 15:16:17,116 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 58, trainbatch 20, loss 5.06132173538208 time 0.05 sec
+2019-11-24 15:16:17,116 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 58 train result, current pass mean loss: 5.096592545509338
+2019-11-24 15:16:17,117 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 58 epcho train result, current best pass loss 5.096592545509338
+2019-11-24 15:16:17,256 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 59, start read image
+2019-11-24 15:16:24,159 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 59, trainbatch 10, loss 5.227029323577881 time 0.06 sec
+2019-11-24 15:16:30,925 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 59, trainbatch 20, loss 5.448471546173096 time 0.05 sec
+2019-11-24 15:16:30,925 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 59 train result, current pass mean loss: 5.1345892429351805
+2019-11-24 15:16:30,925 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 60, start read image
+2019-11-24 15:16:38,246 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 60, trainbatch 10, loss 5.1483941078186035 time 0.06 sec
+2019-11-24 15:16:44,473 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 60, trainbatch 20, loss 5.527108192443848 time 0.06 sec
+2019-11-24 15:16:44,473 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 60 train result, current pass mean loss: 5.203960752487182
+2019-11-24 15:16:44,473 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 61, start read image
+2019-11-24 15:16:51,629 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 61, trainbatch 10, loss 5.456796646118164 time 0.06 sec
+2019-11-24 15:16:58,515 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 61, trainbatch 20, loss 5.584701061248779 time 0.05 sec
+2019-11-24 15:16:58,515 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 61 train result, current pass mean loss: 5.173636054992675
+2019-11-24 15:16:58,515 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 62, start read image
+2019-11-24 15:17:04,992 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 62, trainbatch 10, loss 5.044620990753174 time 0.06 sec
+2019-11-24 15:17:12,033 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 62, trainbatch 20, loss 5.139069080352783 time 0.05 sec
+2019-11-24 15:17:12,034 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 62 train result, current pass mean loss: 5.085318589210511
+2019-11-24 15:17:12,034 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 62 epcho train result, current best pass loss 5.085318589210511
+2019-11-24 15:17:12,194 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 63, start read image
+2019-11-24 15:17:19,081 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 63, trainbatch 10, loss 4.9147257804870605 time 0.07 sec
+2019-11-24 15:17:25,877 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 63, trainbatch 20, loss 4.646485805511475 time 0.05 sec
+2019-11-24 15:17:25,878 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 63 train result, current pass mean loss: 5.08427402973175
+2019-11-24 15:17:25,878 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 63 epcho train result, current best pass loss 5.08427402973175
+2019-11-24 15:17:26,035 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 64, start read image
+2019-11-24 15:17:32,752 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 64, trainbatch 10, loss 5.215592384338379 time 0.06 sec
+2019-11-24 15:17:39,453 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 64, trainbatch 20, loss 4.461602210998535 time 0.05 sec
+2019-11-24 15:17:39,453 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 64 train result, current pass mean loss: 5.153627276420593
+2019-11-24 15:17:39,453 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 65, start read image
+2019-11-24 15:17:46,354 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 65, trainbatch 10, loss 5.717836380004883 time 0.06 sec
+2019-11-24 15:17:53,079 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 65, trainbatch 20, loss 5.3388142585754395 time 0.06 sec
+2019-11-24 15:17:53,080 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 65 train result, current pass mean loss: 5.142378807067871
+2019-11-24 15:17:53,080 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 66, start read image
+2019-11-24 15:17:59,950 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 66, trainbatch 10, loss 5.260490417480469 time 0.06 sec
+2019-11-24 15:18:06,150 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 66, trainbatch 20, loss 4.556073188781738 time 0.05 sec
+2019-11-24 15:18:06,150 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 66 train result, current pass mean loss: 5.043637537956238
+2019-11-24 15:18:06,150 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 66 epcho train result, current best pass loss 5.043637537956238
+2019-11-24 15:18:06,309 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 67, start read image
+2019-11-24 15:18:12,786 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 67, trainbatch 10, loss 5.160748481750488 time 0.06 sec
+2019-11-24 15:18:19,281 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 67, trainbatch 20, loss 4.927952766418457 time 0.05 sec
+2019-11-24 15:18:19,281 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 67 train result, current pass mean loss: 5.108974504470825
+2019-11-24 15:18:19,281 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 68, start read image
+2019-11-24 15:18:26,435 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 68, trainbatch 10, loss 5.027942180633545 time 0.07 sec
+2019-11-24 15:18:32,956 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 68, trainbatch 20, loss 6.152215480804443 time 0.05 sec
+2019-11-24 15:18:32,957 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 68 train result, current pass mean loss: 5.1081910848617555
+2019-11-24 15:18:32,957 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 69, start read image
+2019-11-24 15:18:39,493 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 69, trainbatch 10, loss 4.941375255584717 time 0.06 sec
+2019-11-24 15:18:45,930 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 69, trainbatch 20, loss 5.3550825119018555 time 0.05 sec
+2019-11-24 15:18:45,931 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 69 train result, current pass mean loss: 5.180287933349609
+2019-11-24 15:18:45,931 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 70, start read image
+2019-11-24 15:18:53,015 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 70, trainbatch 10, loss 5.065449237823486 time 0.06 sec
+2019-11-24 15:18:59,608 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 70, trainbatch 20, loss 4.957988739013672 time 0.06 sec
+2019-11-24 15:18:59,609 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 70 train result, current pass mean loss: 5.009730362892151
+2019-11-24 15:18:59,609 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 70 epcho train result, current best pass loss 5.009730362892151
+2019-11-24 15:18:59,767 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 71, start read image
+2019-11-24 15:19:06,864 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 71, trainbatch 10, loss 5.1688079833984375 time 0.06 sec
+2019-11-24 15:19:13,457 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 71, trainbatch 20, loss 4.977400302886963 time 0.06 sec
+2019-11-24 15:19:13,458 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 71 train result, current pass mean loss: 4.998583960533142
+2019-11-24 15:19:13,458 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 71 epcho train result, current best pass loss 4.998583960533142
+2019-11-24 15:19:13,618 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 72, start read image
+2019-11-24 15:19:20,047 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 72, trainbatch 10, loss 5.169238090515137 time 0.06 sec
+2019-11-24 15:19:26,738 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 72, trainbatch 20, loss 5.262364387512207 time 0.05 sec
+2019-11-24 15:19:26,738 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 72 train result, current pass mean loss: 5.137047123908997
+2019-11-24 15:19:26,738 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 73, start read image
+2019-11-24 15:19:33,217 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 73, trainbatch 10, loss 5.305286884307861 time 0.06 sec
+2019-11-24 15:19:39,253 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 73, trainbatch 20, loss 5.098586082458496 time 0.05 sec
+2019-11-24 15:19:39,253 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 73 train result, current pass mean loss: 5.031862688064575
+2019-11-24 15:19:39,253 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 74, start read image
+2019-11-24 15:19:45,734 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 74, trainbatch 10, loss 5.3018341064453125 time 0.06 sec
+2019-11-24 15:19:52,135 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 74, trainbatch 20, loss 4.39725923538208 time 0.05 sec
+2019-11-24 15:19:52,136 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 74 train result, current pass mean loss: 4.982756948471069
+2019-11-24 15:19:52,136 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 74 epcho train result, current best pass loss 4.982756948471069
+2019-11-24 15:19:52,278 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 75, start read image
+2019-11-24 15:19:58,971 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 75, trainbatch 10, loss 5.408734321594238 time 0.06 sec
+2019-11-24 15:20:05,731 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 75, trainbatch 20, loss 4.745802879333496 time 0.05 sec
+2019-11-24 15:20:05,731 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 75 train result, current pass mean loss: 4.976442790031433
+2019-11-24 15:20:05,731 - <ipython-input-11-546e016c2cbb>[line:50] - INFO: temp save 75 epcho train result, current best pass loss 4.976442790031433
+2019-11-24 15:20:05,888 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 76, start read image
+2019-11-24 15:20:12,334 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 76, trainbatch 10, loss 4.944174766540527 time 0.06 sec
+2019-11-24 15:20:19,061 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 76, trainbatch 20, loss 4.834110736846924 time 0.06 sec
+2019-11-24 15:20:19,061 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 76 train result, current pass mean loss: 5.030029368400574
+2019-11-24 15:20:19,061 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 77, start read image
+2019-11-24 15:20:25,725 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 77, trainbatch 10, loss 5.16716194152832 time 0.06 sec
+2019-11-24 15:20:32,067 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 77, trainbatch 20, loss 5.179974555969238 time 0.05 sec
+2019-11-24 15:20:32,067 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 77 train result, current pass mean loss: 5.0696546792984005
+2019-11-24 15:20:32,067 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 78, start read image
+2019-11-24 15:20:38,857 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 78, trainbatch 10, loss 4.885750770568848 time 0.06 sec
+2019-11-24 15:20:44,965 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 78, trainbatch 20, loss 5.272200584411621 time 0.05 sec
+2019-11-24 15:20:44,965 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 78 train result, current pass mean loss: 5.059720778465271
+2019-11-24 15:20:44,965 - <ipython-input-11-546e016c2cbb>[line:32] - INFO: current pass: 79, start read image
+2019-11-24 15:20:51,752 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 79, trainbatch 10, loss 4.986536026000977 time 0.07 sec
+2019-11-24 15:20:58,452 - <ipython-input-11-546e016c2cbb>[line:45] - INFO: pass 79, trainbatch 20, loss 4.651114463806152 time 0.05 sec
+2019-11-24 15:20:58,452 - <ipython-input-11-546e016c2cbb>[line:47] - INFO: pass 79 train result, current pass mean loss: 5.032783842086792
+2019-11-24 15:20:58,453 - <ipython-input-11-546e016c2cbb>[line:54] - INFO: training till last epcho, end training

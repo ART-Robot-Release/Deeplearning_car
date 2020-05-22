@@ -1,0 +1,6 @@
+0 ten
+1 red
+2 green
+3 crossing
+4 right
+5 P
